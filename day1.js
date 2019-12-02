@@ -16,10 +16,10 @@ const result = values.reduce((total, item) => {
 // PART 2 //
 function getRecursiveFuel(module, accumulator) {
   const fuel = Math.floor(module / 3) - 2;
-  if (fuel > 0) {
-    return getRecursiveFuel(fuel, fuel + accumulator)  
-  } 
-  return accumulator
+  if (fuel <= 0) {
+    return accumulator  
+  }
+  return getRecursiveFuel(fuel, fuel + accumulator)   
 }
 
 const recursiveResult = values.reduce((total, item) => {
